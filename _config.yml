@@ -1,31 +1,38 @@
+# Site settings
+title: Junsung's Blog
+description: "Junsung's Blog"
+url: "http://jschoi126.github.io"
+author:
+  name: "Jun Sung Choi"
+  email: "cjscokd@gmail.com"
+  url: "https://jschoi126.github.io"
+
+# Build settings
+baseurl: / # Change this to your relative path (ex: /blog/), or leave just a /
 markdown: kramdown
-highlighter: pygments
-permalink: /posts/:title.html
-excerpt_separator: "<!-- more -->"
-
-github: panxw
-author: "潘学文"
-email: winfirm#163.com
-name: "潘学文个人博客"
-url: http://www.panxw.com
-domain: www.panxw.com
-all_categories: [
-["android", "Android开发","/posts/android.html"], 
-["program", "软件编程","/posts/program.html"],
-["web", "Web建站","/posts/web.html"], 
-["linux", "Linux相关","/posts/linux.html"],
-["read", "读书笔记","/posts/read.html"], 
-["other", "杂记","/posts/other.html"],
-["about", "关于","/about.html"]
-]
-
+source: .
+destination: ./_site
+permalink: /:title
 paginate: 8
-paginate_path: "posts/page:num"
-timezone: America/Los_Angeles
+paginate_path: /page:num/
 
-collections:
-  docs:
-    output: true
+# Default values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
+# Plugins
 gems:
- - jekyll-paginate
+  - jekyll-paginate
+
+# Custom variables
+version: "1.1.0"
+
+# Options
+custom_header: false
+custom_nav_footer: false
+reverse: false
